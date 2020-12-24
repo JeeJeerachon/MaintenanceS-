@@ -9,7 +9,7 @@ git init
 
 ขั้นตอนที่ 2 remote add origin
 พิมพ์
-git remote add origin https://github.com/kongoon/Yii2-Tutorial.git
+git remote add origin https://github.com/JeeJeerachon/MaintenanceS-.git
 เพื่อกำหนดที่เก็บใน GitHub ที่ได้สร้าง Project ไว้ โดยเอามาจาก
 
 ขั้นตอนที่ 3 add *
