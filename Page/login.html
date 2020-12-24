@@ -12,7 +12,7 @@
 <body>
     <div class="container">
         <div class="p-5">
-            <form id="loginForm" class="card col-lg-6 mx-auto p-4">
+            <div id="loginForm" class="card col-lg-6 mx-auto p-4">
                 <div class="text-center">
                     <h2>Maintenance Service</h2>
                 </div>
@@ -34,19 +34,19 @@
                         </label>
                     </div>
                 </div>
-                <button type="submit" class="btn btn-primary">Sign in</button>
+                <button type="button" class="btn btn-primary" onclick="login()">Sign in</button>
                 <hr>
                 <div class="text-center">
                     <a href="">Register</a><br>
                     <a href="">Foget Password</a></div>
-            </form>
+                </div>
         </div>
     </div>
 
 
     <!-- ส่วนเชื่อมต่อ firebase แต่ละส่วน -->
     <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-app.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-auth.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.2.1/firebase-firestore.js"></script>
     <script src="/js/login.js"></script>

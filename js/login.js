@@ -11,43 +11,22 @@ var firebaseConfig = {
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
-firebase.auth().onAuthStateChanged((user) => {
-    if (user) {
-        // User is signed in, see docs for a list of available properties
-        // https://firebase.google.com/docs/reference/js/firebase.User
-        var uid = user.uid;
-        var uemail = user.uemail;
-        console.log(uemail);
-        // ...
-    } else {
-        // User is signed out
-        // ...
-    }
-});
 
-// var email = "";
-// var password = "";
-
-// กด submit รับค่า id ทั้งหมดใน form
-document.getElementById('loginForm').addEventListener('submit', submitForm);
-
-function getInputVal(id) {
-    return document.getElementById(id).value;
-}
-
-function submitForm(e) {
-    e.preventDefault();
+// ล็อคอินจาก onclick login
+function login() {
 
     // รับค่า
-    var email = getInputVal('exampleDropdownFormEmail2');
-    var password = getInputVal('exampleDropdownFormPassword2');
+    var email = document.getElementById('exampleDropdownFormEmail2').value;
+    var password = document.getElementById('exampleDropdownFormPassword2').value;
     console.log(email);
     console.log(password);
     firebase.auth().signInWithEmailAndPassword(email, password)
         .then((user) => {
             // Signed in 
-            
-            location.href = "index.html";
+            // var uemail = user.uemail;
+            // console.log(uemail);
+            // location.href = "index.html";
+
         })
         .catch((error) => {
             var errorCode = error.code;
@@ -57,5 +36,19 @@ function submitForm(e) {
 
 }
 
-
-
+// เช็ค sescion ว่า มี user อยู่หรือไม่
+firebase.auth().onAuthStateChanged((user) => {
+    if (user) {
+        // User is signed in, see docs for a list of available properties
+        // https://firebase.google.com/docs/reference/js/firebase.User
+        var uid = user.uid;
+        var uemail = user.email;
+        console.log(uid);
+        console.log(uemail);
+        location.href = "index.html"; //เมื่อมี user บังคับเปิดหน้า index
+        // ...
+    } else {
+        // User is signed out
+        // ...
+    }
+});
